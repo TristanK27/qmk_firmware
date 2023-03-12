@@ -3,8 +3,8 @@
 
 enum layers {
     BASE,  // default layer
-    SYMB,  // symbols
-    MDIA,  // media keys
+    NUMB,  // numbers and f-keys
+    SYMB,  // media keys
 };
 
 enum custom_keycodes {
@@ -17,26 +17,26 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [BASE] = LAYOUT_ergodox_pretty(
   KC_TRNS,          KC_1,        KC_2,          KC_3,    KC_4,    KC_5,    KC_TRNS,              KC_TRNS,      KC_6,    KC_7,    KC_8,    KC_9,              KC_0,           KC_TRNS,
   KC_DEL,          KC_Q,        KC_W,          KC_E,    KC_R,    KC_T,    KC_PSCR,             KC_TRNS,     KC_Y,    KC_U,    KC_I,    KC_O,              KC_P,           KC_BSLS,
-  LT(MDIA, KC_BSPC),         KC_A,        KC_S,          KC_D,    KC_F,    KC_G,                                        KC_H,    KC_J,    KC_K,    KC_L,    LT(MDIA, KC_SCLN), GUI_T(KC_QUOT),
-  KC_LSFT,         KC_Z, KC_X,          KC_C,    KC_V,    KC_B,    KC_INSERT,                  KC_TRNS, KC_N,    KC_M,    KC_COMM, KC_DOT,           CTL_T(KC_SLSH), KC_RSFT,
+  KC_BSPC,         KC_A,        KC_S,          KC_D,    KC_F,    KC_G,                                        KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_QUOT,
+  KC_LSFT,         KC_Z, KC_X,          KC_C,    KC_V,    KC_B,    KC_INSERT,                  KC_TRNS, KC_N,    KC_M,    KC_COMM, KC_DOT,           KC_SLASH, KC_RSFT,
   KC_TRNS, KC_TRNS,     KC_TRNS, KC_TRNS, KC_TRNS,                                              KC_TRNS,   KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
                                                            KC_TRNS, KC_TRNS,                KC_TRNS, KC_TRNS,
                                                                           KC_HOME,                 KC_PGUP,
-                                                         KC_SPC, KC_BSPC, KC_END,                  KC_PGDN, KC_TAB, KC_ENT
+                                                         LT(SYMB, KC_SPC), LT(NUMB, KC_BSPC), KC_END,                  KC_PGDN, LT(NUMB, KC_TAB), LT(SYMB, KC_ENT)
 ),
 
-[SYMB] = LAYOUT_ergodox_pretty(
+[NUMB] = LAYOUT_ergodox_pretty(
   KC_TRNS,    KC_TRNS,   KC_TRNS,   KC_TRNS,   KC_TRNS,   KC_TRNS,   KC_TRNS,     KC_TRNS, KC_TRNS,   KC_TRNS,   KC_TRNS,   KC_TRNS,   KC_TRNS,  KC_TRNS,
-  KC_TRNS, KC_F9, KC_F10,   KC_F11, KC_F12, KC_TRNS, KC_TRNS,     KC_TRNS, KC_TRNS,   KC_7,    KC_8,    KC_9,    KC_TRNS, KC_TRNS,
-  KC_TRNS, KC_F5, KC_F6,  KC_F7, KC_F8, KC_TRNS,               KC_TRNS, KC_4,    KC_5,    KC_6,    KC_TRNS, KC_TRNS,
-  KC_TRNS, KC_F1, KC_F2, KC_F3, KC_F4, KC_TRNS, KC_TRNS,     KC_TRNS, KC_0, KC_1,    KC_2,    KC_3,    KC_TRNS, KC_TRNS,
+  KC_F15, KC_F9, KC_F10,   KC_F11, KC_F12, KC_F18, KC_TRNS,     KC_TRNS, KC_TRNS,   KC_7,    KC_8,    KC_9,    KC_TRNS, KC_TRNS,
+  KC_F14, KC_F5, KC_F6,  KC_F7, KC_F8, KC_F17,               KC_TRNS, KC_4,    KC_5,    KC_6,    KC_TRNS, KC_TRNS,
+  KC_F13, KC_F1, KC_F2, KC_F3, KC_F4, KC_F16, KC_TRNS,     KC_TRNS, KC_0, KC_1,    KC_2,    KC_3,    KC_TRNS, KC_TRNS,
   KC_TRNS,  KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,                                         KC_TRNS, KC_TRNS,  KC_TRNS,    KC_TRNS,  KC_TRNS,
                                                KC_TRNS, KC_TRNS,     KC_TRNS, KC_TRNS,
                                                         KC_TRNS,     KC_TRNS,
                                       KC_TRNS, KC_TRNS, KC_TRNS,     KC_TRNS, KC_TRNS, KC_TRNS
 ),
 
-[MDIA] = LAYOUT_ergodox_pretty(
+[SYMB] = LAYOUT_ergodox_pretty(
   KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,     KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
   KC_TRNS, S(KC_1), S(KC_2), S(KC_LBRC), S(KC_RBRC), KC_TRNS, KC_TRNS,     KC_TRNS, KC_TRNS, S(KC_7), S(KC_8), KC_TRNS, KC_TRNS, KC_TRNS,
   KC_TRNS, S(KC_3), S(KC_4), S(KC_9), S(KC_0), KC_TRNS,                       KC_TRNS, S(KC_EQUAL), KC_MINUS, S(KC_MINUS), KC_GRAVE, KC_TRNS,
