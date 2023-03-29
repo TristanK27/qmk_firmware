@@ -65,25 +65,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                 KC_TRNS , KC_TRNS, LT(SYMB, KC_TRNS),       LT(NUMB, KC_BSPC) , KC_END ,    KC_TAB  , LT(NUMB, KC_ENT) ,LT(SYMB, KC_TRNS), KC_RGUI, KC_APP
     ),
 
-/*
- * Base Layer: NUMB
- *
- * ,-------------------------------------------.                              ,-------------------------------------------.
- * |  Tab   | ' "  | , <  | . >  |   P  |   Y  |                              |   F  |   G  |   C  |   R  |   L  |  Bksp  |
- * |--------+------+------+------+------+------|                              |------+------+------+------+------+--------|
- * |Ctrl/Esc|   A  |   O  |   E  |   U  |   I  |                              |   D  |   H  |   T  |   N  |   S  |Ctrl/- _|
- * |--------+------+------+------+------+------+-------------.  ,-------------+------+------+------+------+------+--------|
- * | LShift | ; :  |   Q  |   J  |   K  |   X  | [ {  |CapsLk|  |F-keys|  ] } |   B  |   M  |   W  |   V  |   Z  | RShift |
- * `----------------------+------+------+------+------+------|  |------+------+------+------+------+----------------------'
- *                        |Adjust| LGUI | LAlt/| Space| Nav  |  | Sym  | Space| AltGr| RGUI | Menu |
- *                        |      |      | Enter|      |      |  |      |      |      |      |      |
- *                        `----------------------------------'  `----------------------------------'
- */
     [NUMB] = LAYOUT(
-     KC_TAB  ,KC_QUOTE,KC_COMM,  KC_DOT,   KC_P ,   KC_Y ,                                        KC_F,   KC_G ,  KC_C ,   KC_R ,  KC_L , KC_BSPC,
-     CTL_ESC , KC_A ,  KC_O   ,  KC_E  ,   KC_U ,   KC_I ,                                        KC_D,   KC_H ,  KC_T ,   KC_N ,  KC_S , CTL_MINS,
-     KC_LSFT ,KC_SCLN, KC_Q   ,  KC_J  ,   KC_K ,   KC_X , KC_LBRC,KC_CAPS,     FKEYS  , KC_RBRC, KC_B,   KC_M ,  KC_W ,   KC_V ,  KC_Z , KC_RSFT,
-                                 ADJUST, KC_LGUI, ALT_ENT, KC_SPC , NAV   ,     SYM    , KC_SPC ,KC_RALT, KC_RGUI, KC_APP
+     KC_F15 , KC_F9, KC_F10, KC_F11,   KC_F12,   KC_F18 ,                                                    KC_TRNS,   KC_7 ,  KC_8 ,   KC_9 ,  KC_TRNS , KC_TRNS,
+     KC_F14 , KC_F5, KC_F6 , KC_F7 ,   KC_F8 ,   KC_F17 ,                                                    KC_TRNS,   KC_4 ,  KC_5 ,   KC_6 ,  KC_TRNS , KC_TRNS,
+     KC_F13 , KC_F1, KC_F2 , KC_F3 ,   KC_F4 ,   KC_F16 ,      KC_TRNS, KC_TRNS,      KC_TRNS , KC_TRNS,     KC_0 ,     KC_1 ,  KC_2 ,   KC_3 ,  KC_TRNS,  KC_TRNS,
+                                KC_TRNS, KC_TRNS, KC_TRNS,     KC_TRNS, KC_TRNS,     KC_TRNS, KC_TRNS,     KC_TRNS, KC_TRNS, KC_TRNS
     ),
 
 /*
