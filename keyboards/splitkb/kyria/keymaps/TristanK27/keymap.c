@@ -86,32 +86,48 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      KC_F13 , KC_F1, KC_F2 , KC_F3 ,   KC_F4 ,   KC_F16 ,      KC_TRNS, KC_TRNS,      KC_TRNS , KC_TRNS,     KC_0 ,     KC_1 ,  KC_2 ,   KC_3 ,  KC_TRNS,  KC_TRNS,
                                 KC_TRNS, KC_TRNS, KC_TRNS,     KC_TRNS, KC_TRNS,     KC_TRNS, KC_TRNS,     KC_TRNS, KC_TRNS, KC_TRNS
     ),
-
+/*
+ * Layer Name: SYMB
+ * Description: Symbol Layer
+ *
+ * ,-------------------------------------------.                              ,-------------------------------------------.
+ * |        |  !   |  @   |  {   |  }   |      |                              |      |      |  &   |  *   |      |        |
+ * |--------+------+------+------+------+------|                              |------+------+------+------+------+--------|
+ * |        |  #   |  $   |  (   |  )   |      |                              |      |  +   |  -   |  _   |  `   |        |
+ * |--------+------+------+------+------+------+-------------.  ,-------------+------+------+------+------+------+--------|
+ * |        |  %   |  ^   |  [   |  ]   |      |      |      |  |      |      |      |  =   |  ~   |  |   |      |        |
+ * `----------------------+------+------+------+------+------|  |------+------+------+------+------+----------------------'
+ *                        |      |      |      |      |      |  |      |      |      |      |      |
+ *                        |      |      |      |      |      |  |      |      |      |      |      |
+ *                        `----------------------------------'  `----------------------------------'
+*/
     [SYMB] = LAYOUT(
       KC_TRNS, S(KC_1), S(KC_2), S(KC_LBRC), S(KC_RBRC), KC_TRNS,                                    KC_TRNS, KC_TRNS, S(KC_7), S(KC_8), KC_TRNS, KC_TRNS,
       KC_TRNS, S(KC_3), S(KC_4), S(KC_9),    S(KC_0), KC_TRNS,                                          KC_TRNS, S(KC_EQUAL), KC_MINUS, S(KC_MINUS), KC_GRAVE, KC_TRNS,
       KC_TRNS, S(KC_5), S(KC_6), KC_LBRC, KC_RBRC, KC_TRNS, KC_TRNS, KC_TRNS,     KC_TRNS, KC_TRNS,  KC_TRNS, KC_EQUAL, S(KC_GRAVE), KC_TRNS, KC_TRNS,
                                  KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,     KC_TRNS, KC_TRNS,  KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS
     ),
+
 /*
- * Sym Layer: Numbers and symbols
+ * Layer Name: MDIA
+ * Description: Media and Control Layer
  *
  * ,-------------------------------------------.                              ,-------------------------------------------.
- * |    `   |  1   |  2   |  3   |  4   |  5   |                              |   6  |  7   |  8   |  9   |  0   |   =    |
+ * |        |C-w   |C->   |C-e   |C-y   |      |                              |      |C-c   |C-z   |      |C-v   |        |
  * |--------+------+------+------+------+------|                              |------+------+------+------+------+--------|
- * |    ~   |  !   |  @   |  #   |  $   |  %   |                              |   ^  |  &   |  *   |  (   |  )   |   +    |
+ * |        |      |      |      |      |PrtSc |                              | Left | Down | Up   | Right|      |        |
  * |--------+------+------+------+------+------+-------------.  ,-------------+------+------+------+------+------+--------|
- * |    |   |   \  |  :   |  ;   |  -   |  [   |  {   |      |  |      |   }  |   ]  |  _   |  ,   |  .   |  /   |   ?    |
+ * |        |      |      |      |      |C-<   |      |      |  |      |      | M-Rev| Vol- | Vol+ | M-Fwd|      |        |
  * `----------------------+------+------+------+------+------|  |------+------+------+------+------+----------------------'
  *                        |      |      |      |      |      |  |      |      |      |      |      |
  *                        |      |      |      |      |      |  |      |      |      |      |      |
  *                        `----------------------------------'  `----------------------------------'
  */
     [MDIA] = LAYOUT(
-      KC_GRV ,   KC_1 ,   KC_2 ,   KC_3 ,   KC_4 ,   KC_5 ,                                       KC_6 ,   KC_7 ,   KC_8 ,   KC_9 ,   KC_0 , KC_EQL ,
-     KC_TILD , KC_EXLM,  KC_AT , KC_HASH,  KC_DLR, KC_PERC,                                     KC_CIRC, KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN, KC_PLUS,
-     KC_PIPE , KC_BSLS, KC_COLN, KC_SCLN, KC_MINS, KC_LBRC, KC_LCBR, _______, _______, KC_RCBR, KC_RBRC, KC_UNDS, KC_COMM,  KC_DOT, KC_SLSH, KC_QUES,
-                                 _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
+      KC_TRNS, LCTL(KC_W), LCTL(KC_RIGHT), LCTL(KC_E), LCTL(KC_Y), KC_TRNS,                                         KC_TRNS, LCTL(KC_C), LCTL(KC_Z), KC_TRNS, LCTL(KC_V), KC_TRNS,
+      KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_PSCR,                                                         KC_LEFT, KC_DOWN, KC_UP, KC_RIGHT, KC_TRNS, KC_TRNS,
+      KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, LCTL(KC_LEFT), KC_TRNS, KC_TRNS,               KC_TRNS, KC_TRNS, KC_MEDIA_REWIND, KC_AUDIO_VOL_DOWN, KC_AUDIO_VOL_UP, KC_MEDIA_FAST_FORWARD, KC_MPLY, KC_TRNS,
+                                 KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,                     KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS
     ),
 
 /*
