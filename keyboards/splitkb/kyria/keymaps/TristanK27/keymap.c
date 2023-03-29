@@ -65,6 +65,21 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                 KC_TRNS , KC_TRNS, LT(SYMB, KC_TRNS),       LT(NUMB, KC_BSPC) , KC_END ,    KC_TAB  , LT(NUMB, KC_ENT) ,LT(SYMB, KC_TRNS), KC_RGUI, KC_APP
     ),
 
+/*
+ * Layer Name: NUMB
+ * Description: Numeric Layer with F-keys
+ *
+ * ,-------------------------------------------.                              ,-------------------------------------------.
+ * |  F15   |  F9  |  F10 |  F11 |  F12 |  F18 |                              |      |  7   |  8   |  9   |      |        |
+ * |--------+------+------+------+------+------|                              |------+------+------+------+------+--------|
+ * |  F14   |  F5  |  F6  |  F7  |  F8  |  F17 |                              |      |  4   |  5   |  6   |      |        |
+ * |--------+------+------+------+------+------+-------------.  ,-------------+------+------+------+------+------+--------|
+ * |  F13   |  F1  |  F2  |  F3  |  F4  |  F16 |      |      |  |      |      |  0   |  1   |  2   |  3   |      |        |
+ * `----------------------+------+------+------+------+------|  |------+------+------+------+------+----------------------'
+ *                        |      |      |      |      |      |  |      |      |      |      |      |
+ *                        |      |      |      |      |      |  |      |      |      |      |      |
+ *                        `----------------------------------'  `----------------------------------'
+ */
     [NUMB] = LAYOUT(
      KC_F15 , KC_F9, KC_F10, KC_F11,   KC_F12,   KC_F18 ,                                                    KC_TRNS,   KC_7 ,  KC_8 ,   KC_9 ,  KC_TRNS , KC_TRNS,
      KC_F14 , KC_F5, KC_F6 , KC_F7 ,   KC_F8 ,   KC_F17 ,                                                    KC_TRNS,   KC_4 ,  KC_5 ,   KC_6 ,  KC_TRNS , KC_TRNS,
@@ -72,27 +87,12 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                 KC_TRNS, KC_TRNS, KC_TRNS,     KC_TRNS, KC_TRNS,     KC_TRNS, KC_TRNS,     KC_TRNS, KC_TRNS, KC_TRNS
     ),
 
-/*
- * Nav Layer: Media, navigation
- *
- * ,-------------------------------------------.                              ,-------------------------------------------.
- * |        |      |      |      |      |      |                              | PgUp | Home |   ↑  | End  | VolUp| Delete |
- * |--------+------+------+------+------+------|                              |------+------+------+------+------+--------|
- * |        |  GUI |  Alt | Ctrl | Shift|      |                              | PgDn |  ←   |   ↓  |   →  | VolDn| Insert |
- * |--------+------+------+------+------+------+-------------.  ,-------------+------+------+------+------+------+--------|
- * |        |      |      |      |      |      |      |ScLck |  |      |      | Pause|M Prev|M Play|M Next|VolMut| PrtSc  |
- * `----------------------+------+------+------+------+------|  |------+------+------+------+------+----------------------'
- *                        |      |      |      |      |      |  |      |      |      |      |      |
- *                        |      |      |      |      |      |  |      |      |      |      |      |
- *                        `----------------------------------'  `----------------------------------'
- */
     [SYMB] = LAYOUT(
-      _______, _______, _______, _______, _______, _______,                                     KC_PGUP, KC_HOME, KC_UP,   KC_END,  KC_VOLU, KC_DEL,
-      _______, KC_LGUI, KC_LALT, KC_LCTL, KC_LSFT, _______,                                     KC_PGDN, KC_LEFT, KC_DOWN, KC_RGHT, KC_VOLD, KC_INS,
-      _______, _______, _______, _______, _______, _______, _______, KC_SCRL, _______, _______,KC_PAUSE, KC_MPRV, KC_MPLY, KC_MNXT, KC_MUTE, KC_PSCR,
-                                 _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
+      KC_TRNS, S(KC_1), S(KC_2), S(KC_LBRC), S(KC_RBRC), KC_TRNS,                                    KC_TRNS, KC_TRNS, S(KC_7), S(KC_8), KC_TRNS, KC_TRNS,
+      KC_TRNS, S(KC_3), S(KC_4), S(KC_9),    S(KC_0), KC_TRNS,                                          KC_TRNS, S(KC_EQUAL), KC_MINUS, S(KC_MINUS), KC_GRAVE, KC_TRNS,
+      KC_TRNS, S(KC_5), S(KC_6), KC_LBRC, KC_RBRC, KC_TRNS, KC_TRNS, KC_TRNS,     KC_TRNS, KC_TRNS,  KC_TRNS, KC_EQUAL, S(KC_GRAVE), KC_TRNS, KC_TRNS,
+                                 KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,     KC_TRNS, KC_TRNS,  KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS
     ),
-
 /*
  * Sym Layer: Numbers and symbols
  *
