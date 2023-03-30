@@ -62,17 +62,18 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,   KC_TRNS,  KC_TRNS,   KC_TRNS, KC_TRNS, KC_TRNS,   KC_TRNS
 ),
 
-/* Number
+/*
+ * Symbol
  * ,-----------------------------------------------------------------------------------.
- * |  F15  |  F9  |  F10 |  F11 |  F12 |  F18 | Trns |   7  |   8  |   9  | Trns | Trns |
- * |-------+------+------+------+------+------+------+------+------+------+------+------|
- * |  F14  |  F5  |  F6  |  F7  |  F8  |  F17 | Trns |   4  |   5  |   6  | Trns | Trns |
- * |-------+------+------+------+------+------+------+------+------+------+------+------|
- * |  F13  |  F1  |  F2  |  F3  |  F4  |  F16 |   0  |   1  |   2  |   3  | Trns | Trns |
- * |-------+------+------+------+------+------+------+------+------+------+------+------|
- * | Trns | Trns | Trns | Trns | Trns |  Trns | Trns | Trns | Trns | Trns | Trns | Trns |
+ * | Trns |   !  |   @  |   (  |   )  | Trns | Trns |   &  |   *  | Trns | Trns | Trns |
+ * |------+------+------+------+------+-------------+------+------+------+------+------|
+ * | Trns |   #  |   $  |   {  |   }  | Trns | Trns |   =  |   -  |   _  |   `  | Trns |
+ * |------+------+------+------+------+------|------+------+------+------+------+------|
+ * | Trns |   %  |   ^  |   [  |   ]  | Trns | Trns |   +  |   ~  | Trns | Trns | Trns |
+ * |------+------+------+------+------+------+------+------+------+------+------+------|
+ * | Trns | Trns | Trns | Trns | Trns |    Trns     | Trns | Trns | Trns | Trns | Trns |
  * `-----------------------------------------------------------------------------------'
- */
+*/
 [SYMB] = LAYOUT_planck_mit(
     KC_TRNS, S(KC_1), S(KC_2),   S(KC_9), S(KC_0),  KC_TRNS, KC_TRNS, S(KC_7),    S(KC_8),    KC_TRNS, KC_TRNS, KC_TRNS,
     KC_TRNS,  S(KC_3),   S(KC_4),   S(KC_LBRC),   S(KC_RBRC),   KC_TRNS,   KC_TRNS,   S(KC_EQUAL),    KC_MINUS,    S(KC_MINUS), S(KC_GRAVE), KC_TRNS,
