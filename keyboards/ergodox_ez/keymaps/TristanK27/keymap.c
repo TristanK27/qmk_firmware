@@ -1,13 +1,14 @@
 #include QMK_KEYBOARD_H
 #include "version.h"
 
-// TODO: add functional layer with arrow keys,media keys and other shortcuts
-// TODO: add alt keys on delete key left and equivalent on the right hand side
+// TODO: add layer for numpad
+
 enum layers {
     BASE,  // default layer
     NUMB,  // numbers and f-keys
     SYMB,  // symbol keys
     MDIA,  // arrow keys, media keys and other shortcut keys
+    NUMPAD,// numpad keys, on the right side of the keyboard
 };
 
 enum custom_keycodes {
@@ -138,6 +139,19 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, LCTL(KC_LEFT), KC_TRNS,     KC_TRNS, KC_MEDIA_REWIND, KC_AUDIO_VOL_DOWN, KC_AUDIO_VOL_UP, KC_MEDIA_FAST_FORWARD, KC_MPLY, KC_TRNS,
   KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,                                         KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
 
+                                               KC_TRNS, KC_TRNS,     KC_TRNS, KC_TRNS,
+                                                        KC_TRNS,     KC_TRNS,
+                                      KC_TRNS, KC_TRNS, KC_TRNS,     KC_TRNS, KC_TRNS, KC_TRNS
+),
+/*
+
+*/
+[NUMB] = LAYOUT_ergodox_pretty(
+  KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,     KC_TRNS, KC_TRNS,    KC_TRNS,    KC_TRNS,    KC_TRNS, KC_TRNS, KC_TRNS,
+  KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,     KC_TRNS, KC_TRNS,    KC_KP_7,    KC_KP_8,    KC_KP_9,    KC_TRNS, KC_TRNS, 
+  KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,                       KC_TRNS,    KC_KP_4,    KC_KP_5,    KC_KP_6,    KC_TRNS, KC_TRNS, 
+  KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,     KC_TRNS, KC_0,       KC_KP_1,    KC_KP_2,    KC_KP_3,    KC_TRNS, KC_TRNS, 
+  KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,                                            KC_TRNS,    KC_TRNS,    KC_TRNS, KC_TRNS, KC_TRNS,
                                                KC_TRNS, KC_TRNS,     KC_TRNS, KC_TRNS,
                                                         KC_TRNS,     KC_TRNS,
                                       KC_TRNS, KC_TRNS, KC_TRNS,     KC_TRNS, KC_TRNS, KC_TRNS
