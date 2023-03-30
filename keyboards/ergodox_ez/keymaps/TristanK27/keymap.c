@@ -1,14 +1,13 @@
 #include QMK_KEYBOARD_H
 #include "version.h"
 
-// TODO: add layer for numpad
-
 enum layers {
     BASE,  // default layer
     NUMB,  // numbers and f-keys
     SYMB,  // symbol keys
     MDIA,  // arrow keys, media keys and other shortcut keys
     NUMPAD,// numpad keys, on the right side of the keyboard
+    ADJUST // reset, debug, rgb controls, etc.
 };
 
 enum custom_keycodes {
@@ -65,7 +64,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *                                        | TRNS | TRNS |       | TRNS | TRNS |
  *                                 ,------|------|------|       |------+--------+------.
  *                                 |      |      | TRNS |       | TRNS |        |      |
- *                                 | TRNS | TRNS |------|       |------| TRNS  | TRNS |
+ *                                 | TRNS | TRNS |------|       |------| TRNS   | TRNS |
  *                                 |      |      | TRNS |       | TRNS |        |      |
  *                                 `--------------------'       `----------------------'
  */
@@ -96,7 +95,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *                                        | TRNS | TRNS |       | TRNS | TRNS |
  *                                 ,------|------|------|       |------+--------+------.
  *                                 |      |      | TRNS |       | TRNS |        |      |
- *                                 | TRNS | TRNS |------|       |------| TRNS  | TRNS |
+ *                                 | TRNS | TRNS |------|       |------| TRNS   | TRNS |
  *                                 |      |      | TRNS |       | TRNS |        |      |
  *                                 `--------------------'       `----------------------'
  */
@@ -128,7 +127,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *                                        | TRNS | TRNS |       | TRNS | TRNS |
  *                                 ,------|------|------|       |------+--------+------.
  *                                 |      |      | TRNS |       | TRNS |        |      |
- *                                 | TRNS | TRNS |------|       |------| TRNS  | TRNS |
+ *                                 | TRNS | TRNS |------|       |------| TRNS   | TRNS |
  *                                 |      |      | TRNS |       | TRNS |        |      |
  *                                 `--------------------'       `----------------------'
  */
@@ -161,7 +160,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *                                        | TRNS | TRNS |       | TRNS | TRNS |
  *                                 ,------|------|------|       |------+--------+------.
  *                                 |      |      | TRNS |       | TRNS |        |      |
- *                                 | TRNS | TRNS |------|       |------| TRNS  | TRNS |
+ *                                 | TRNS | TRNS |------|       |------| TRNS   | TRNS |
  *                                 |      |      | TRNS |       | TRNS |        |      |
  *                                 `--------------------'       `----------------------'
 */
@@ -171,6 +170,38 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,                       KC_TRNS,    KC_KP_4,    KC_KP_5,    KC_KP_6,    KC_TRNS, KC_TRNS, 
   KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,     KC_TRNS, KC_KP_0,    KC_KP_1,    KC_KP_2,    KC_KP_3,    KC_TRNS, KC_TRNS, 
   KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,                                            KC_TRNS,    KC_TRNS,    KC_TRNS, KC_TRNS, KC_TRNS,
+                                               KC_TRNS, KC_TRNS,     KC_TRNS, KC_TRNS,
+                                                        KC_TRNS,     KC_TRNS,
+                                      KC_TRNS, KC_TRNS, KC_TRNS,     KC_TRNS, KC_TRNS, KC_TRNS
+),
+/*
+    * Keymap 5: [ADJUST] Adjust layer
+    *
+    * ,--------------------------------------------------.           ,--------------------------------------------------.
+    * |  TRNS  | TRNS | TRNS | TRNS | TRNS | TRNS | TRNS |           | TRNS | TRNS | TRNS | TRNS | TRNS | TRNS |  TRNS  |
+    * |--------+------+------+------+------+-------------|           |------+------+------+------+------+------+--------|
+    * |  TRNS  | QKBT | DBTOG| RGBT | RGBM | RGBH+| RGBH-|           | RGBS+| RGBS-| RGBV+| RGBV-| TRNS | TRNS | TRNS   |
+    * |--------+------+------+------+------+------|      |           |      |------+------+------+------+------+--------|
+    * |  TRNS  | TRNS | TRNS | TRNS | TRNS | TRNS |------|           |------| TRNS | TRNS | TRNS | TRNS | TRNS | TRNS   |
+    * |--------+------+------+------+------+------| TRNS |           | TRNS |------+------+------+------+------+--------|
+    * |  TRNS  | TRNS | TRNS | TRNS | TRNS | TRNS |      |           |      | TRNS | TRNS | TRNS | TRNS | TRNS | TRNS   |
+    * `--------+------+------+------+------+-------------'           `-------------+------+------+------+------+--------'
+    *   | TRNS | TRNS | TRNS | TRNS | TRNS |                                       | TRNS | TRNS | TRNS | TRNS | TRNS |
+    *   `----------------------------------'                                       `----------------------------------'
+    *                                        ,-------------.       ,-------------.
+    *                                        | TRNS | TRNS |       | TRNS | TRNS |
+    *                                 ,------|------|------|       |------+--------+------.
+    *                                 |      |      | TRNS |       | TRNS |        |      |
+    *                                 | TRNS | TRNS |------|       |------| TRNS   | TRNS |
+    *                                 |      |      | TRNS |       | TRNS |        |      |
+    *                                 `--------------------'       `----------------------'
+*/
+[ADJUST] = LAYOUT_ergodox_pretty(
+  KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,     KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+  KC_TRNS, QK_BOOT, DB_TOGG, RGB_TOG, RGB_MOD, RGB_HUI, RGB_HUD,     RGB_SAI, RGB_SAD, RGB_VAI, RGB_VAD, KC_TRNS, KC_TRNS, KC_TRNS,
+  KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,                       KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+  KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,     KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+  KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,                                            KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
                                                KC_TRNS, KC_TRNS,     KC_TRNS, KC_TRNS,
                                                         KC_TRNS,     KC_TRNS,
                                       KC_TRNS, KC_TRNS, KC_TRNS,     KC_TRNS, KC_TRNS, KC_TRNS
