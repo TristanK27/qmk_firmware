@@ -14,7 +14,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 #include QMK_KEYBOARD_H
-
+// TODO: Add numpad layer
 enum layers {
     BASE,
     NUMB,
@@ -23,24 +23,6 @@ enum layers {
     NUMPAD,
     ADJUST
 };
-
-
-// Aliases for readability
-#define QWERTY   DF(BASE)
-
-#define SYM      MO(MDIA)
-#define NAV      MO(SYMB)
-#define FKEYS    MO(NUMPAD)
-#define ADJUST   MO(ADJUST)
-
-#define CTL_ESC  MT(MOD_LCTL, KC_ESC)
-#define CTL_QUOT MT(MOD_RCTL, KC_QUOTE)
-#define CTL_MINS MT(MOD_RCTL, KC_MINUS)
-#define ALT_ENT  MT(MOD_LALT, KC_ENT)
-
-// Note: LAlt/Enter (ALT_ENT) is not the same thing as the keyboard shortcut Alt+Enter.
-// The notation `mod/tap` denotes a key that activates the modifier `mod` when held down, and
-// produces the key `tap` when tapped (i.e. pressed and released).
 
 // clang-format off
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -117,7 +99,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |--------+------+------+------+------+------|                              |------+------+------+------+------+--------|
  * |        |      |      |      |      |PrtSc |                              | Left | Down | Up   | Right|      |        |
  * |--------+------+------+------+------+------+-------------.  ,-------------+------+------+------+------+------+--------|
- * |        |      |      |      |      |C-<   |      |      |  |      |      | M-Rev| Vol- | Vol+ | M-Fwd|      |        |
+ * |        |      |      |      |      |C-<   |      |      |  |      |      | M-Rev| Vol- | Vol+ | M-Fwd| pause|        |
  * `----------------------+------+------+------+------+------|  |------+------+------+------+------+----------------------'
  *                        |      |      |      |      |      |  |      |      |      |      |      |
  *                        |      |      |      |      |      |  |      |      |      |      |      |
@@ -131,24 +113,24 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
 
 /*
- * Function Layer: Function keys
+ * Layer Name: ADJUST
+ * Description: Adjust Layer
  *
  * ,-------------------------------------------.                              ,-------------------------------------------.
- * |        |  F9  | F10  | F11  | F12  |      |                              |      |      |      |      |      |        |
+ * |        |RESET |Debug |RGBtog|RGBmod|RGBh+ |                              |RGBh- |RGBs+ |RGBs- |RGBv+ |RGBv- |        |
  * |--------+------+------+------+------+------|                              |------+------+------+------+------+--------|
- * |        |  F5  |  F6  |  F7  |  F8  |      |                              |      | Shift| Ctrl |  Alt |  GUI |        |
+ * |        |      |      |      |      |      |                              |      |      |      |      |      |        |
  * |--------+------+------+------+------+------+-------------.  ,-------------+------+------+------+------+------+--------|
- * |        |  F1  |  F2  |  F3  |  F4  |      |      |      |  |      |      |      |      |      |      |      |        |
+ * |        |      |      |      |      |      |      |      |  |      |      |      |      |      |      |      |        |
  * `----------------------+------+------+------+------+------|  |------+------+------+------+------+----------------------'
  *                        |      |      |      |      |      |  |      |      |      |      |      |
  *                        |      |      |      |      |      |  |      |      |      |      |      |
  *                        `----------------------------------'  `----------------------------------'
- */
-    [NUMPAD] = LAYOUT(
-      _______,  KC_F9 ,  KC_F10,  KC_F11,  KC_F12, _______,                                     _______, _______, _______, _______, _______, _______,
-      _______,  KC_F5 ,  KC_F6 ,  KC_F7 ,  KC_F8 , _______,                                     _______, KC_RSFT, KC_RCTL, KC_LALT, KC_RGUI, _______,
-      _______,  KC_F1 ,  KC_F2 ,  KC_F3 ,  KC_F4 , _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
-                                 _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
+*/
+    [ADJUST] = LAYOUT(
+      KC_TRNS, QK_BOOT, DB_TOGG, RGB_TOG, RGB_MOD, RGB_HUI,                                                         RGB_HUD, RGB_SAI, RGB_SAD,  RGB_VAI, RGB_VAD, KC_TRNS,
+      KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,                                                         KC_TRNS, KC_TRNS, KC_TRNS,  KC_TRNS, KC_TRNS, KC_TRNS,
+      KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,                     KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,  KC_TRNS ,KC_TRNS, KC_TRNS, 
+                                 KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,                     KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS
     ),
-
 };
