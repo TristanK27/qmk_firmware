@@ -43,7 +43,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [BASE] = LAYOUT(
      MT(MOD_LALT, KC_DEL)  , KC_Q ,  KC_W   ,  KC_E  ,   KC_R ,   KC_T ,                                                                                          KC_Y,   KC_U ,  KC_I ,   KC_O ,    KC_P ,    MT(MOD_RALT, KC_BSLS),
      MT(MOD_LCTL, KC_BSPC) , KC_A ,  KC_S   ,  KC_D  ,   KC_F ,   KC_G ,                                                                                          KC_H,   KC_J ,  KC_K ,   KC_L ,    KC_SCLN,  MT(MOD_RCTL, KC_QUOT),
-     KC_LSFT               , KC_Z ,  KC_X   ,  KC_C  ,   KC_V ,   KC_B ,   KC_LGUI ,           KC_HOME,                 LT(ADJUST, KC_ESC), KC_TRNS,              KC_N,   KC_M ,  KC_COMM, KC_DOT ,  KC_SLSH,  KC_RSFT,
+     KC_LSFT               , KC_Z ,  KC_X   ,  KC_C  ,   KC_V ,   KC_B ,   LGUI_T(CW_TOGG) ,   KC_HOME,                 LT(ADJUST, KC_ESC), CW_TOGG,              KC_N,   KC_M ,  KC_COMM, KC_DOT ,  KC_SLSH,  KC_RSFT,
                     KC_TRNS , LT(NUMPAD, KC_TRNS), LT(NUMB, KC_TRNS),      LT(SYMB, KC_BSPC) , LT(MDIA, KC_END) ,       LT(MDIA, KC_TRNS) , LT(SYMB, KC_ENT) ,    LT(NUMB, KC_TRNS), LT(NUMPAD,KC_TRNS) , KC_APP
     ),
 
