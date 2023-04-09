@@ -26,25 +26,25 @@ enum layers {
 
 // clang-format off
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
-/*
- * Base Layer: QWERTY
- *
+/* 
+ * Layer Name: Base
+ * Description: Default Layer
  * ,-------------------------------------------.                              ,-------------------------------------------.
- * |  Tab   |   Q  |   W  |   E  |   R  |   T  |                              |   Y  |   U  |   I  |   O  |   P  |  Bksp  |
+ * | del/alt|   Q  |   W  |   E  |   R  |   T  |                              |   Y  |   U  |   I  |   O  |   P  |   \    |
  * |--------+------+------+------+------+------|                              |------+------+------+------+------+--------|
- * |Ctrl/Esc|   A  |   S  |   D  |   F  |   G  |                              |   H  |   J  |   K  |   L  | ;  : |Ctrl/' "|
+ * |Bksp/ctl|   A  |   S  |   D  |   F  |   G  |                              |   H  |   J  |   K  |   L  |   ;  |   '    |
  * |--------+------+------+------+------+------+-------------.  ,-------------+------+------+------+------+------+--------|
- * | LShift |   Z  |   X  |   C  |   V  |   B  | [ {  |CapsLk|  |F-keys|  ] } |   N  |   M  | ,  < | . >  | /  ? | RShift |
+ * |  Shift |   Z  |   X  |   C  |   V  |   B  |  GUI | home |  |esc/AD|      |   N  |   M  |   ,  |   .  |   /  |  Shift |
  * `----------------------+------+------+------+------+------|  |------+------+------+------+------+----------------------'
- *                        |Adjust| LGUI | LAlt/| Space| Nav  |  | Sym  | Space| AltGr| RGUI | Menu |
- *                        |      |      | Enter|      |      |  |      |      |      |      |      |
+ *                        |      |      |      |  spc |  end |  |      |  ent |      |      |      |
+ *                        |      |NUMP  |NUMB  |  SYMB|  MDIA|  |  MDIA|  SYMB| NUMB | NUMP |      |
  *                        `----------------------------------'  `----------------------------------'
  */
     [BASE] = LAYOUT(
-     MT(MOD_LALT, KC_DEL)  , KC_Q ,  KC_W   ,  KC_E  ,   KC_R ,   KC_T ,                                                                KC_Y,   KC_U ,  KC_I ,   KC_O ,    KC_P ,  MT(MOD_RALT, KC_BSLS),
-     MT(MOD_LCTL, KC_BSPC) , KC_A ,  KC_S   ,  KC_D  ,   KC_F ,   KC_G ,                                                                KC_H,   KC_J ,  KC_K ,   KC_L ,    KC_SCLN,MT(MOD_RCTL, KC_QUOT),
-     KC_LSFT               , KC_Z ,  KC_X   ,  KC_C  ,   KC_V ,   KC_B ,   KC_LGUI ,           KC_HOME,     KC_TRNS , KC_TRNS,          KC_N,   KC_M ,  KC_COMM, KC_DOT ,  KC_SLSH, KC_RSFT,
-                                KC_TRNS , KC_TRNS, LT(SYMB, KC_TRNS),       LT(NUMB, KC_BSPC) , KC_END ,    KC_TAB  , LT(NUMB, KC_ENT) ,LT(SYMB, KC_TRNS), KC_RGUI, KC_APP
+     MT(MOD_LALT, KC_DEL)  , KC_Q ,  KC_W   ,  KC_E  ,   KC_R ,   KC_T ,                                                                                          KC_Y,   KC_U ,  KC_I ,   KC_O ,    KC_P ,    MT(MOD_RALT, KC_BSLS),
+     MT(MOD_LCTL, KC_BSPC) , KC_A ,  KC_S   ,  KC_D  ,   KC_F ,   KC_G ,                                                                                          KC_H,   KC_J ,  KC_K ,   KC_L ,    KC_SCLN,  MT(MOD_RCTL, KC_QUOT),
+     KC_LSFT               , KC_Z ,  KC_X   ,  KC_C  ,   KC_V ,   KC_B ,   KC_LGUI ,           KC_HOME,                 LT(ADJUST, KC_ESC), KC_TRNS,              KC_N,   KC_M ,  KC_COMM, KC_DOT ,  KC_SLSH,  KC_RSFT,
+                    KC_TRNS , LT(NUMPAD, KC_TRNS), LT(NUMB, KC_TRNS),      LT(SYMB, KC_BSPC) , LT(MDIA, KC_END) ,       LT(MDIA, KC_TRNS) , LT(SYMB, KC_ENT) ,    LT(NUMB, KC_TRNS), LT(NUMPAD,KC_TRNS) , KC_APP
     ),
 
 /*
