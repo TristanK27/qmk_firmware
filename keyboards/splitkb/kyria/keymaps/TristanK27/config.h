@@ -18,6 +18,6 @@
 
 // Lets you roll mod-tap keys
 //#define IGNORE_MOD_TAP_INTERRUPT //
-//#define KEY_OVERRIDE_REPEAT_DELAY 75 // dictates how long you have to hold a key before it starts repeating, has a major impact on modifier keys
-#define TAPPING_TERM 100 // dictates when a key is considered a tap or a hold
+#define KEY_OVERRIDE_REPEAT_DELAY 300 // dictates how long you have to hold a key before it starts repeating, has a major impact on modifier keys
+#define TAPPING_TERM 150 // dictates when a key is considered a tap or a hold
 #define PERMISSIVE_HOLD // makes it so that when you press a dual-role key, tap another key, and then release the dual-role key(all within the tapping term), the hold action gets executed instead of the tap action
