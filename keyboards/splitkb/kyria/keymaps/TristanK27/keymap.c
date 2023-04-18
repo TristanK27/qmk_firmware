@@ -14,7 +14,6 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 #include QMK_KEYBOARD_H
-// TODO: Add numpad layer
 enum layers {
     BASE,
     NUMB,
