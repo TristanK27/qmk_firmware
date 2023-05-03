@@ -20,5 +20,7 @@
 //#define IGNORE_MOD_TAP_INTERRUPT //
 //#define KEY_OVERRIDE_REPEAT_DELAY 300 // dictates how long you have to hold a key before it starts repeating, has a major impact on modifier keys
 #define TAPPING_TERM 150 // dictates when a key is considered a tap or a hold
-//#define PERMISSIVE_HOLD // makes it so that when you press a dual-role key, tap another key, and then release the dual-role key(all within the tapping term), the hold action gets executed instead of the tap action
+#define PERMISSIVE_HOLD // makes it so that when you press a dual-role key, tap another key, and then release the dual-role key(all within the tapping term), the hold action gets executed instead of the tap action
 #define QUICK_TAP_TERM 100 // dictates how much time you have to tap a key after a dual-role key to get the tap action
+#define BOTH_SHIFTS_TURNS_ON_CAPS_WORD
+#define DOUBLE_TAP_SHIFT_TURNS_ON_CAPS_WORD
