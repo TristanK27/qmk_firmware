@@ -27,7 +27,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |--------+------+------+------+------+------| Ins  |           | TRNS |------+------+------+------+------+--------|
  * | LShift |   Z  |   X  |   C  |   V  |   B  |      |           |      |   N  |   M  |   ,  |   .  |   /  | RShift |
  * `--------+------+------+------+------+-------------'           `-------------+------+------+------+------+--------'
- *   | TRNS | TRNS | TRNS | Left | Right|                                       |  Up  | Down | TRNS | TRNS | TRNS |
+ *   | LCTL | TRNS | TRNS | Left | Right|                                       |  Up  | Down | TRNS | TRNS | RCTL   |
  *   `----------------------------------'                                       `----------------------------------'
  *                                        ,-------------.       ,-------------.
  *                                        | LGui | TRNS |       | Esc  | TRNS |
@@ -38,14 +38,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *                                 `--------------------'       `----------------------'
  */
 [BASE] = LAYOUT_ergodox_pretty(
-  KC_TRNS,          KC_1,        KC_2,          KC_3,    KC_4,    KC_5,    KC_TRNS,              KC_TRNS,      KC_6,    KC_7,    KC_8,    KC_9,              KC_0,           KC_TRNS,
-  MT(MOD_LALT, KC_DEL),          KC_Q,        KC_W,          KC_E,    KC_R,    KC_T,    KC_PSCR,             KC_TRNS,     KC_Y,    KC_U,    KC_I,    KC_O,              KC_P,           MT(MOD_RALT, KC_BSLS),
-  MT(MOD_LCTL, KC_BSPC),         KC_A,        KC_S,          KC_D,    KC_F,    KC_G,                                        KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, MT(MOD_RCTL, KC_QUOT),
-  KC_LSFT,         KC_Z, KC_X,          KC_C,    KC_V,    KC_B,    KC_INSERT,                  KC_TRNS, KC_N,    KC_M,    KC_COMM, KC_DOT,           KC_SLASH, KC_RSFT,
-  KC_TRNS, KC_TRNS,     KC_TRNS, KC_LEFT, LT(MDIA, KC_RIGHT),                                              LT(MDIA, KC_UP),   KC_DOWN, KC_TRNS, KC_TRNS, KC_TRNS,
-                                                           KC_LGUI, KC_TRNS,                KC_ESCAPE, KC_TRNS,
-                                                                          KC_HOME,                 KC_PGUP,
-                                                         LT(SYMB, KC_SPC), LT(NUMB, KC_BSPC), KC_END,                  KC_PGDN, LT(NUMB, KC_TAB), LT(SYMB, KC_ENT)
+  KC_TRNS,                 KC_1,     KC_2,     KC_3,     KC_4,                KC_5,  KC_TRNS,                                                                     KC_TRNS,     KC_6,    KC_7,               KC_8,    KC_9,    KC_0,     KC_TRNS,
+  MT(MOD_LALT, KC_DEL),    KC_Q,     KC_W,     KC_E,     KC_R,                KC_T,  KC_PSCR,                                                                     KC_TRNS,     KC_Y,    KC_U,               KC_I,    KC_O,    KC_P,     MT(MOD_RALT, KC_BSLS),
+  LT(SYMB, KC_BSPC),       KC_A,     KC_S,     KC_D,     KC_F,                KC_G,                                                                                            KC_H,    KC_J,               KC_K,    KC_L,    KC_SCLN,  LT(SYMB, KC_QUOT),
+  KC_LSFT,                 KC_Z,     KC_X,     KC_C,     KC_V,                KC_B,  KC_INSERT,                                                                   KC_TRNS,     KC_N,    KC_M,               KC_COMM, KC_DOT,  KC_SLASH, KC_RSFT,
+  KC_LCTL ,                KC_TRNS,  KC_TRNS,  KC_LEFT,  LT(NUMB, KC_RIGHT),                                                                                                         LT(NUMB, KC_UP),    KC_DOWN, KC_TRNS, KC_TRNS,  KC_RCTL,
+                                                                                                    KC_LGUI, MO(MDIA),                LT(MDIA,KC_ESCAPE), CW_TOGG,
+                                                                                                             KC_HOME,                 KC_PGUP,
+                                                                                KC_SPC,             KC_BSPC, KC_END,                  KC_PGDN,            KC_TAB,   KC_ENT
 ),
 /* Keymap 1: [NUMB] Number layer
  *
@@ -143,39 +143,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                       KC_TRNS, KC_TRNS, KC_TRNS,     KC_TRNS, KC_TRNS, KC_TRNS
 ),
 /*
- * Keymap 4: [NUMB] Number pad layer
- *
- * ,--------------------------------------------------.           ,--------------------------------------------------.
- * |  TRNS  | TRNS | TRNS | TRNS | TRNS | TRNS | TRNS |           | TRNS | TRNS | TRNS | TRNS | TRNS | TRNS |  TRNS  |
- * |--------+------+------+------+------+-------------|           |------+------+------+------+------+------+--------|
- * |  TRNS  | TRNS | TRNS | TRNS | TRNS | TRNS | TRNS |           | TRNS | TRNS |  7   |  8   |  9   | TRNS | TRNS   |
- * |--------+------+------+------+------+------|      |           |      |------+------+------+------+------+--------|
- * |  TRNS  | TRNS | TRNS | TRNS | TRNS | TRNS |------|           |------| TRNS |  4   |  5   |  6   | TRNS | TRNS   |
- * |--------+------+------+------+------+------| TRNS |           | TRNS |------+------+------+------+------+--------|
- * |  TRNS  | TRNS | TRNS | TRNS | TRNS | TRNS |      |           |      |  0   |  1   |  2   |  3   | TRNS | TRNS   |
- * `--------+------+------+------+------+-------------'           `-------------+------+------+------+------+--------'
- *   | TRNS | TRNS | TRNS | TRNS | TRNS |                                       | TRNS | TRNS | TRNS | TRNS | TRNS |
- *   `----------------------------------'                                       `----------------------------------'
- *                                        ,-------------.       ,-------------.
- *                                        | TRNS | TRNS |       | TRNS | TRNS |
- *                                 ,------|------|------|       |------+--------+------.
- *                                 |      |      | TRNS |       | TRNS |        |      |
- *                                 | TRNS | TRNS |------|       |------| TRNS   | TRNS |
- *                                 |      |      | TRNS |       | TRNS |        |      |
- *                                 `--------------------'       `----------------------'
-*/
-[NUMB] = LAYOUT_ergodox_pretty(
-  KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,     KC_TRNS, KC_TRNS,    KC_TRNS,    KC_TRNS,    KC_TRNS, KC_TRNS, KC_TRNS,
-  KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,     KC_TRNS, KC_TRNS,    KC_KP_7,    KC_KP_8,    KC_KP_9,    KC_TRNS, KC_TRNS, 
-  KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,                       KC_TRNS,    KC_KP_4,    KC_KP_5,    KC_KP_6,    KC_TRNS, KC_TRNS, 
-  KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,     KC_TRNS, KC_KP_0,    KC_KP_1,    KC_KP_2,    KC_KP_3,    KC_TRNS, KC_TRNS, 
-  KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,                                            KC_TRNS,    KC_TRNS,    KC_TRNS, KC_TRNS, KC_TRNS,
-                                               KC_TRNS, KC_TRNS,     KC_TRNS, KC_TRNS,
-                                                        KC_TRNS,     KC_TRNS,
-                                      KC_TRNS, KC_TRNS, KC_TRNS,     KC_TRNS, KC_TRNS, KC_TRNS
-),
-/*
-    * Keymap 5: [ADJUST] Adjust layer
+    * Keymap 4: [ADJUST] Adjust layer
     *
     * ,--------------------------------------------------.           ,--------------------------------------------------.
     * |  TRNS  | TRNS | TRNS | TRNS | TRNS | TRNS | TRNS |           | TRNS | TRNS | TRNS | TRNS | TRNS | TRNS |  TRNS  |
