@@ -200,3 +200,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 //#define NO_ACTION_ONESHOT
 
 //#define DEBUG_MATRIX_SCAN_RATE
+#define PERMISSIVE_HOLD // makes it so that when you press a dual-role key, tap another key, and then release the dual-role key(all within the tapping term), the hold action gets executed instead of the tap action
+//#define QUICK_TAP_TERM 100 // dictates for how long you have to hold a key after a dual-role key to get the hold action
+#define BOTH_SHIFTS_TURNS_ON_CAPS_WORD
+#define DOUBLE_TAP_SHIFT_TURNS_ON_CAPS_WORD
