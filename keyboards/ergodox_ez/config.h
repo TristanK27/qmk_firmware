@@ -44,10 +44,13 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define MOUSEKEY_WHEEL_MAX_SPEED    MOUSEKEY_MAX_SPEED
 #define MOUSEKEY_WHEEL_TIME_TO_MAX  MOUSEKEY_TIME_TO_MAX
 
-#define TAPPING_TOGGLE  1
+//#define TAPPING_TOGGLE  1
 
 #define TAPPING_TERM    200
+#define PERMISSIVE_HOLD // makes it so that when you press a dual-role key, tap another key, and then release the dual-role key(all within the tapping term), the hold action gets executed instead of the tap action
 #define IGNORE_MOD_TAP_INTERRUPT // this makes it possible to do rolling combos (zx) with keys that convert to other keys on hold (z becomes ctrl when you hold it, and when this option isn't enabled, z rapidly followed by x actually sends Ctrl-x. That's bad.)
+#define BOTH_SHIFTS_TURNS_ON_CAPS_WORD // This makes it so that when both shift keys are pressed everything is capitalized till space is pressed
+#define DOUBLE_TAP_SHIFT_TURNS_ON_CAPS_WORD // This makes it so that when both shift keys are pressed everything is capitalized till space is pressed
 
 /* Mechanical locking support. Use KC_LCAP, KC_LNUM or KC_LSCR instead in keymap */
 #define LOCKING_SUPPORT_ENABLE
