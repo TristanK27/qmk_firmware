@@ -45,7 +45,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   KC_LCTL ,                ADJUST,KC_TRNS,     KC_LEFT,  LT(NUMB, KC_RIGHT),                                                                                                         LT(NUMB, KC_UP),    KC_DOWN, KC_TRNS, KC_TRNS,  KC_RCTL,
                                                                                                     KC_LGUI, MO(MDIA),                LT(MDIA,KC_ESCAPE), CW_TOGG,
                                                                                                              KC_HOME,                 KC_PGUP,
-                                                                                KC_SPC,             KC_BSPC, KC_END,                  KC_PGDN,            KC_TAB,   KC_ENT
+                                                                            KC_SPC, MT(MOD_LCTL, KC_BSPC),   KC_END,                  KC_PGDN,            MT(MOD_RCTL, KC_TAB),   KC_ENT
 ),
 /* Keymap 1: [NUMB] Number layer
  *
