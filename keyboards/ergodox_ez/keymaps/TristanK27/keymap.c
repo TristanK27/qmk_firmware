@@ -2,7 +2,6 @@
 #include "version.h"
 
 // TODO: Add a gaming layers without double tap keys, modifiers, etc.
-// TODO: Add key combo to put pc to sleep
 // TOOD: Fix bug where I can't activate ` right after a backspace
 
 enum layers {
@@ -26,7 +25,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * ,--------------------------------------------------.           ,--------------------------------------------------.
  * |  TRNS  |   1  |   2  |   3  |   4  |   5  | TRNS |           | TRNS |   6  |   7  |   8  |   9  |   0  |  TRNS  |
  * |--------+------+------+------+------+-------------|           |------+------+------+------+------+------+--------|
- * |ALT/DEL |   Q  |   W  |   E  |   R  |   T  | PScr |           | TRNS |   Y  |   U  |   I  |   O  |   P  |   \    |
+ * |ALT/DEL |   Q  |   W  |   E  |   R  |   T  | PScr |           | SLEEP|   Y  |   U  |   I  |   O  |   P  |   \    |
  * |--------+------+------+------+------+------|      |           |      |------+------+------+------+------+--------|
  * |SYMB/BkSp|  A  |   S  |   D  |   F  |   G  |------|           |------|   H  |   J  |   K  |   L  |   ;  |SYMB/'  |
  * |--------+------+------+------+------+------| Ins  |           | TRNS |------+------+------+------+------+--------|
@@ -207,7 +206,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_DEL,  KC_Q,    KC_W,    KC_E,    KC_R,              KC_T,    KC_PSCR,            KC_TRNS, KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_BSLS,
     KC_BSPC, KC_A,    KC_S,    KC_D,    KC_F,              KC_G,                                 KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_QUOT,
     KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,              KC_B,    KC_INS,             KC_TRNS, KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_RSFT,
-    KC_LCTL, KC_TRNS, KC_TRNS, KC_LEFT, LT(NUMB,KC_RIGHT),                                                KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_RCTL,
+    KC_LCTL, KC_TRNS, KC_TRNS, KC_LEFT, KC_RIGHT,                                                         KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_RCTL,
                                                            KC_LGUI, KC_TRNS,            KC_TRNS, KC_TRNS,
                                                                     KC_HOME,            KC_PGUP,
                                                    KC_SPC, KC_BSPC, KC_END,             KC_PGDN, KC_TAB, KC_ENT
