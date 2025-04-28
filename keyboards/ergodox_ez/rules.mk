@@ -16,3 +16,7 @@ BACKLIGHT_SUPPORTED = no
 MOUSE_SHARED_EP = no
 
 DEFAULT_FOLDER = ergodox_ez/base
+
+# TristanK27 config
+CAPS_WORD_ENABLE = yes
+AUTOCORRECT_ENABLE = yes
