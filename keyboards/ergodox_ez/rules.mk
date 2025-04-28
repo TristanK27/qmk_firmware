@@ -20,3 +20,4 @@ DEFAULT_FOLDER = ergodox_ez/base
 # TristanK27 config
 CAPS_WORD_ENABLE = yes
 AUTOCORRECT_ENABLE = yes
+DYNAMIC_TAPPING_TERM_ENABLE = yes
